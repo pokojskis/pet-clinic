@@ -14,7 +14,7 @@
     </parent>
     <groupId>com.sektorsoftware</groupId>
     <artifactId>pet-clinic</artifactId>
-    <version>0.0.1</version>
+    <version>0.0.2-SNAPSHOT</version>
     <name>pet-clinic</name>
     <description>Demo project for Spring Boot</description>
 
@@ -48,6 +48,9 @@
 
     <scm>
         <developerConnection>scm:git:git@github.com:pokojskis/pet-clinic.git</developerConnection>
-    </scm>
+      <connection>scm:git:git://github.com/pokojskis/pet-clinic.git</connection>
+    <url>http://github.com/pokojskis/pet-clinic</url>
+    <tag>HEAD</tag>
+  </scm>
 
 </project>
