@@ -3,6 +3,11 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <packaging>pom</packaging>
+    <scm>
+        <connection>scm:git:git://github.com/pokojskis/pet-clinic.git</connection>
+        <developerConnection>scm:git:git@github.com:pokojskis/pet-clinic.git</developerConnection>
+        <url>http://github.com/pokojskis/pet-clinic</url>
+    </scm>
     <modules>
         <module>pet-clinic-data</module>
         <module>pet-clinic-web</module>
