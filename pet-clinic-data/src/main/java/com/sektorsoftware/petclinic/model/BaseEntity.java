@@ -1,10 +1,13 @@
 package com.sektorsoftware.petclinic.model;
 
-import lombok.Data;
+import lombok.*;
 
 import java.io.Serializable;
 
-@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+@Setter
 public class BaseEntity implements Serializable {
 
     private Long id;
