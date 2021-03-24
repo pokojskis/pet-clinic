@@ -1,8 +1,11 @@
 package com.sektorsoftware.petclinic.bootstrap;
 
 import com.sektorsoftware.petclinic.model.Owner;
+import com.sektorsoftware.petclinic.model.PetType;
 import com.sektorsoftware.petclinic.model.Vet;
 import com.sektorsoftware.petclinic.service.OwnerService;
+import com.sektorsoftware.petclinic.service.PetService;
+import com.sektorsoftware.petclinic.service.PetTypeService;
 import com.sektorsoftware.petclinic.service.VetService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
@@ -12,10 +15,12 @@ public class DataLoader implements CommandLineRunner {
 
     private final OwnerService ownerService;
     private final VetService vetService;
+    private final PetTypeService petTypeService;
 
-    public DataLoader(OwnerService ownerService, VetService vetService) {
+    public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService) {
         this.ownerService = ownerService;
         this.vetService = vetService;
+        this.petTypeService = petTypeService;
     }
 
     @Override
@@ -23,6 +28,7 @@ public class DataLoader implements CommandLineRunner {
 
         loadOwners();
         loadVets();
+        loadPetTypes();
     }
 
     private void loadOwners() {
@@ -61,5 +67,18 @@ public class DataLoader implements CommandLineRunner {
         vetService.save(vet2);
 
         System.out.println("Loaded Vets...");
+    }
+
+    private void loadPetTypes() {
+
+        PetType dog = new PetType();
+        dog.setName("Dog");
+        PetType savedDogPetType = petTypeService.save(dog);
+
+        PetType cat = new PetType();
+        cat.setName("Cat");
+        PetType savedCatPetType = petTypeService.save(cat);
+
+        System.out.println("Loaded PetTypes...");
     }
 }
